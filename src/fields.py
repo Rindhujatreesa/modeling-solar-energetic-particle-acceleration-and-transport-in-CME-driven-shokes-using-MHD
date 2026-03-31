@@ -6,14 +6,17 @@ def parker_spiral(position):
     if r == 0:
         return np.zeros(3)
 
-    Br = B0 * (r0 / r)**2
-    Bphi = - (Omega * r / Vsw) * Br
-
-    # Convert to Cartesian approximation
     x, y, z = position
     phi = np.arctan2(y, x)
 
+    Br = B0 * (r0 / r)**2
+    Bphi = - (Omega * r / Vsw) * Br
+
+    # Convert properly
     Bx = Br * np.cos(phi) - Bphi * np.sin(phi)
     By = Br * np.sin(phi) + Bphi * np.cos(phi)
 
-    return np.array([Bx, By, 0.0])
+    # Add small z component to avoid planar trapping
+    Bz = 0.1 * Br
+
+    return np.array([Bx, By, Bz])

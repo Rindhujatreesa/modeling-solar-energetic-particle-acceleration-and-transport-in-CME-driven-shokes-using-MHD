@@ -46,9 +46,14 @@ if run:
     st.subheader("Energy Distribution")
 
     energy = compute_energy(final_vel)
+    energy = energy / np.max(energy)  # normalize for better visualization
 
     fig2, ax2 = plt.subplots()
-    ax2.hist(energy, bins=50)
+    if np.allclose(energy, energy[0]):
+        st.warning("Energy distribution has no spread. Adjust simulation parameters.")
+    else:
+        bins = min(50, len(np.unique(energy)))
+        ax2.hist(energy, bins=bins)
     ax2.set_title("Energy Spectrum")
 
     st.pyplot(fig2)
@@ -63,3 +68,6 @@ if run:
     ax3.set_title("Pitch Angle Cosine Distribution")
 
     st.pyplot(fig3)
+
+    st.write("Velocity sample:", final_vel[:5])
+    st.write("Energy sample:", energy[:5])
