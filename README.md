@@ -180,7 +180,8 @@ Diffusive shock acceleration naturally produces a power-law energy spectrum, con
 ### Focused Transport Equation
 
 $$
-\frac{\partial f}{\partial t} + \mu v \frac{\partial f}{\partial z} + \frac{1-\mu^2}{2L} \, v \frac{\partial f}{\partial \mu} = \frac{\partial}{\partial \mu} \left( D_{\mu\mu} \frac{\partial f}{\partial \mu} \right)
+\frac{\partial f}{\partial t} + \mu v \frac{\partial f}{\partial z} + \frac{1-\mu^2}{2L}
+v \frac{\partial f}{\partial \mu} = \frac{\partial}{\partial \mu} \left( D_{\mu\mu} \frac{\partial f}{\partial \mu} \right)
 $$
 
 
