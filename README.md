@@ -1,4 +1,4 @@
-# Solar Energetic Particle Acceleration and transporation in Coronal Mass Ejections shocks using Magnetohydrodynamics
+# Solar Energetic Particle Acceleration and Transportation in Coronal Mass Ejections shocks using Magnetohydrodynamics
 
 ## Plasma and Solar Wind
 
@@ -19,7 +19,7 @@ $$
 - $\mathbf{u}$ : Plasma velocity vector (m/s)  
 - $\nabla \cdot$ : Divergence operator  
 
-**Explanation:**  
+
 This equation expresses conservation of mass. Any change in plasma density at a point is balanced by the flow of plasma into or out of that region [[2]](#2-en-parker-dynamics-of-the-interplanetary-gas-and-magnetic-fields-doi-101086146579).
 
 
@@ -45,7 +45,7 @@ $$
 - $\mathbf{B}$ : Magnetic field (Tesla)  
 - $\nabla p$ : Pressure gradient  
 
-**Explanation:**  
+
 This equation represents conservation of momentum. Plasma motion is driven by pressure gradients and electromagnetic forces, particularly the Lorentz force $\mathbf{J} \times \mathbf{B}$ [[2]](#2-en-parker-dynamics-of-the-interplanetary-gas-and-magnetic-fields-doi-101086146579).
 
 
@@ -71,7 +71,7 @@ $$
 - $\Omega$ : Angular rotation rate of the Sun  
 - $V_{sw}$ : Solar wind speed  
 
-**Explanation:**  
+
 Due to solar rotation and outward plasma flow, magnetic field lines are twisted into a spiral structure. This geometry governs how energetic particles propagate through the heliosphere [[2]](#2-en-parker-dynamics-of-the-interplanetary-gas-and-magnetic-fields-doi-101086146579).
 
 
@@ -101,7 +101,7 @@ $$
 V_{CME} > V_A
 $$
 
-**Explanation:**  
+
 A shock forms when a CME travels faster than the characteristic speed at which disturbances propagate in the plasma. This produces a discontinuity in plasma properties [[4]](#4-ti-gombosi-physics-of-the-space-environment).
 
 
@@ -135,7 +135,7 @@ $$
 **Variables:**
 - $r$ : Compression ratio  
 
-**Explanation:**  
+
 The compression ratio determines how efficiently particles are accelerated at the shock. Higher compression leads to stronger acceleration [[5]](#5-tidman-krall-shock-waves-in-collisionless-plasmas).
 
 
@@ -170,7 +170,7 @@ $$
 - $\gamma$ : Spectral index  
 - $r$ : Shock compression ratio  
 
-**Explanation:**  
+
 Diffusive shock acceleration naturally produces a power-law energy spectrum, consistent with observations of solar energetic particles [[7]](#7-ar-bell-the-acceleration-of-cosmic-rays-in-shock-fronts-doi-101093mnras1822147).
 
 
@@ -197,43 +197,33 @@ $$
 
 
 
-### Term-by-Term Explanation
-
-**Time Evolution Term**
+1. **Time Evolution Term**: Represents how the particle distribution changes over time.
 
 $$
 \frac{\partial f}{\partial t}
 $$
 
-Represents how the particle distribution changes over time.
 
-
-**Streaming Term**
+2. **Streaming Term**: Describes particle motion along magnetic field lines.
 
 $$
 \mu v \frac{\partial f}{\partial z}
 $$
 
-Describes particle motion along magnetic field lines.
 
 
-
-**Focusing Term**
+3. **Focusing Term**: Represents how spatial variations in magnetic field strength alter particle directions.
 
 $$
 \frac{1-\mu^2}{2L} \, v \frac{\partial f}{\partial \mu}
 $$
 
-Represents how spatial variations in magnetic field strength alter particle directions.
 
-
-**Diffusion Term**
+4. **Diffusion Term**: Describes scattering of particles due to magnetic turbulence, which randomizes their directions [[9]](#9-ec-roelof-propagation-of-solar-cosmic-rays-1969), [[10]](#10-j-skilling-cosmic-ray-streaming-doi-101093mnras1534499).
 
 $$
 \frac{\partial}{\partial \mu} \left( D_{\mu\mu} \frac{\partial f}{\partial \mu} \right)
 $$
-
-Describes scattering of particles due to magnetic turbulence, which randomizes their directions [[9]](#9-ec-roelof-propagation-of-solar-cosmic-rays-1969), [[10]](#10-j-skilling-cosmic-ray-streaming-doi-101093mnras1534499).
 
 
 
@@ -243,7 +233,6 @@ $$
 L = - \left( \frac{1}{B} \frac{dB}{dz} \right)^{-1}
 $$
 
-**Explanation:**  
 The focusing length quantifies how rapidly the magnetic field changes along a field line, determining how strongly particles are focused or defocused.
 
 
@@ -261,7 +250,6 @@ $$
 - $\mathbf{v}$ : Particle velocity  
 - $\mathbf{B}$ : Magnetic field  
 
-**Explanation:**  
 This equation governs the motion of charged particles in electromagnetic fields. In the heliosphere, particle trajectories are primarily controlled by magnetic fields [[11]](#11-jd-jackson-classical-electrodynamics).
 
 
@@ -315,7 +303,7 @@ $$
 - $\varepsilon_0$ : Permittivity of free space  
 - $\mu_0$ : Permeability of free space  
 
-**Explanation:**  
+
 In MHD, we assume quasi-neutrality ($\rho_e \approx 0$) and neglect displacement current, simplifying Maxwell’s equations for plasma conditions.
 
 
