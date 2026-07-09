@@ -1,5 +1,60 @@
 # Solar Energetic Particle Acceleration and Transportation in Coronal Mass Ejections shocks using Magnetohydrodynamics
 
+# Physics-Informed Numerical Simulation and Machine Learning Imputation Framework for Solar Energetic Particle (SEP) Transport across CME-Driven Shocks
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Core](https://img.shields.io/badge/Physics-Focused%20Transport-blue)](#theoretical-formulation)
+
+## Research Overview
+This repository contains a research-grade computational framework engineered to model **Solar Energetic Particle (SEP)** acceleration and spatial-temporal evolution within Coronal Mass Ejection (CME) shock boundary environments. 
+
+A central challenge in space climate forecasting and interplanetary mission protection is resolving observational data gaps within multi-mission satellite telemetry. Spacecraft instruments tracking particle **Pitch-Angle Distributions (PADs)** frequently suffer from sensor dead-zones, telemetry dropouts, and geometric shielding limitations. 
+
+This toolkit tackles this challenge by combining **explicit finite-difference numerical solvers** (modeling physical transport laws) with **deep autoencoder neural networks** to impute missing PAD parameters under high uncertainty.
+
+---
+
+## Theoretical Formulation
+
+The baseline particle distribution function $f(x, \mu, t)$ is modeled via the 1D Focused Transport Equation (FTE):
+
+$$\frac{\partial f}{\partial t} + \mu v \frac{\partial f}{\partial x} = \frac{\partial}{\partial \mu} \left( D_\mu(\mu) \frac{\partial f}{\partial \mu} \right) + S(x, \mu, t)$$
+
+Where:
+* $x$: Heliocentric spatial coordinate parallel to the magnetic field line.
+* $\mu = \cos(\theta)$: Pitch-angle cosine matching the local ambient field.
+* $v$: Relativistic/non-relativistic particle velocity matrix.
+* $D_\mu(\mu)$: Pitch-angle diffusion coefficient based on quasi-linear magnetic turbulence theory:
+
+$$D_\mu(\mu) = D_0 (1 - \mu^2)|\mu|^{q-1}$$
+
+---
+
+## Architecture Blueprint
+
+The framework bridges physical transport mechanics with deep learning imputation:
+
+```text
++----------------------------------------------------------------------------+
+|                          1. PHYSICS ENGINE (FTE)                           |
+|  Solves continuous particle distribution f(x, μ, t) via numerical methods.  |
++----------------------------------------------------------------------------+
+                                      |
+                                      v
++----------------------------------------------------------------------------+
+|                         2. OBSERVATION DEGRADER                            |
+|    Injects artificial patch/matrix dropouts to simulate spacecraft gaps.   |
++----------------------------------------------------------------------------+
+                                      |
+                                      v
++----------------------------------------------------------------------------+
+|                   3. MACHINE LEARNING ENCODER-DECODER                      |
+| Evaluates Masked-MSE Loss to reconstruct fluid-continuous distributions.   |
++----------------------------------------------------------------------------+
+```
+
+---
+
 ## Plasma and Solar Wind
 
 *Plasma is a quasineutral gas of charged and neutral particles which exhibits a collective behavior.*
