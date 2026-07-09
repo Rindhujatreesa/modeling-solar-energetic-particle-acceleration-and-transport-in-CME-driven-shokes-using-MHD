@@ -1,6 +1,6 @@
-# Solar Energetic Particle Acceleration and Transportation in Coronal Mass Ejections shocks using Magnetohydrodynamics
+# Solar Energetic Particle Acceleration and Transportation in Coronal Mass Ejections Shocks using Magnetohydrodynamics
 
-# Physics-Informed Numerical Simulation and Machine Learning Imputation Framework for Solar Energetic Particle (SEP) Transport across CME-Driven Shocks
+### Physics-Informed Numerical Simulation and Machine Learning Imputation Framework for Solar Energetic Particle (SEP) Transport across CME-Driven Shocks
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Core](https://img.shields.io/badge/Physics-Focused%20Transport-blue)](#theoretical-formulation)
