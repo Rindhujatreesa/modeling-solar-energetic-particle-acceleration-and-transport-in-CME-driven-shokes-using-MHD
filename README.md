@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Core](https://img.shields.io/badge/Physics-Focused%20Transport-blue)](#theoretical-formulation)
 
-## Research Overview
+## Overview
 This repository contains a research-grade computational framework engineered to model **Solar Energetic Particle (SEP)** acceleration and spatial-temporal evolution within Coronal Mass Ejection (CME) shock boundary environments. 
 
 A central challenge in space climate forecasting and interplanetary mission protection is resolving observational data gaps within multi-mission satellite telemetry. Spacecraft instruments tracking particle **Pitch-Angle Distributions (PADs)** frequently suffer from sensor dead-zones, telemetry dropouts, and geometric shielding limitations. 
