@@ -6,11 +6,11 @@
 [![Core](https://img.shields.io/badge/Physics-Focused%20Transport-blue)](#theoretical-formulation)
 
 ## Overview
-This repository contains a research-grade computational framework engineered to model **Solar Energetic Particle (SEP)** acceleration and spatial-temporal evolution within Coronal Mass Ejection (CME) shock boundary environments. 
+This repository contains my independent research study of a computational framework engineered to model **Solar Energetic Particle (SEP)** acceleration and spatial-temporal evolution within Coronal Mass Ejection (CME) shock boundary environments. 
 
-A central challenge in space climate forecasting and interplanetary mission protection is resolving observational data gaps within multi-mission satellite telemetry. Spacecraft instruments tracking particle **Pitch-Angle Distributions (PADs)** frequently suffer from sensor dead-zones, telemetry dropouts, and geometric shielding limitations. 
+A central challenge in space climate forecasting and interplanetary mission protection is resolving observational data gaps within multi-mission satellite telemetry. Spacecraft instruments tracking particle **Pitch-Angle Distributions (PADs)** frequently suffer from sensor dead zones, telemetry dropouts, and geometric shielding limitations. 
 
-This toolkit tackles this challenge by combining **explicit finite-difference numerical solvers** (modeling physical transport laws) with **deep autoencoder neural networks** to impute missing PAD parameters under high uncertainty.
+This project tries to tackle this challenge by combining **explicit finite-difference numerical solvers** (modeling physical transport laws) with **deep autoencoder neural networks** to impute missing PAD parameters under high uncertainty.
 
 ---
 
@@ -60,7 +60,7 @@ The framework bridges physical transport mechanics with deep learning imputation
 *Plasma is a quasineutral gas of charged and neutral particles which exhibits a collective behavior.*
 A plasma is an ionized gas consisting of charged particles (electrons and ions) whose collective behavior is governed by electromagnetic forces rather than binary collisions. This enables long-range interactions and collective phenomena such as waves and instabilities [[1]](#1-ff-chen-introduction-to-plasma-physics-and-controlled-fusion-doi-101007978-3-319-22309-4_1)
 
-The solar wind is a continuous, supersonic outflow of magnetized plasma from the solar corona into interplanetary space. It carries both mass and magnetic field outward, forming the heliosphere [[2]](#2-en-parker-dynamics-of-the-interplanetary-gas-and-magnetic-fields-doi-101086146579).The plasma escapes due to the high coronal temperature, which expands into the space with magnetic field.
+The solar wind is a continuous, supersonic outflow of magnetized plasma from the solar corona into interplanetary space. It carries both mass and magnetic field outward, forming the heliosphere [[2]](#2-en-parker-dynamics-of-the-interplanetary-gas-and-magnetic-fields-doi-101086146579). The plasma escapes due to the high coronal temperature, which expands into space with the magnetic field.
 
 ### Mass Conservation Equation
 
@@ -70,7 +70,7 @@ $$
 
 **Variables:**
 - $\rho$ : Plasma mass density (kg/m³)  
-- $t$ : Time (s)  
+- $t$: Time (s)  
 - $\mathbf{u}$ : Plasma velocity vector (m/s)  
 - $\nabla \cdot$ : Divergence operator  
 
