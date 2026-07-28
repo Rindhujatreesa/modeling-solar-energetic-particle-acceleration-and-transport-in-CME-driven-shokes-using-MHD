@@ -2,13 +2,13 @@
 
 ## Plasma: The fourth state of matter [[1]](#1-ff-chen-introduction-to-plasma-physics-and-controlled-fusion-doi-101007978-3-319-22309-4_1)
 
-Plasma is the state of matter at high temperature in vacuum, when the atom ionizes to a positive ion and electron(s), with atleast one positive charge.
-- This makes plasma a charged medium with rampant electric field.
-- The colliion of particles in a plasma medium corresponds to interaction of electric fields between the ions, rather than physical interactions.
-- Plasma usually exists only in vacuum, as air tends to cool down the ions resulting in combining of ions and electrons to form neutral atoms.
+Plasma is the state of matter at high temperature in vacuum, when the atom ionizes to a positive ion and electron(s), with at least one positive charge.
+- This makes plasma a charged medium with a rampant electric field.
+- The collision of particles in a plasma medium corresponds to interaction of electric fields between the ions, rather than physical interactions.
+- Plasma usually exists only in vacuum, as air tends to cool down the ions, resulting in the combination of ions and electrons to form neutral atoms.
 
 
-The Saha's equation provides the ratio of ionization to be expected in a gas in thermal equilibrium.
+Saha's equation provides the ratio of ionization to be expected in a gas in thermal equilibrium.
 
 $$
 \frac{n_i}{n_n}\approx 2.4\times 10^{21} \frac{T^{3/2}}{n_i}e^{-U_i/KT}
@@ -48,10 +48,12 @@ If the dimension $L$ of the plasma system is much larger thean the Debye length 
 - **1. An ionized gas is considered plasma only when the density is enough to satisfy the condition: $\lambda_D \ll L$** 
 - **2. For the Debye Shielding to be valid, the number of particles in a Debye Sphere should satisfy the collective behavior condition: $N_D \ggg 1$**
         where, 
-        $$
-        N_D = \frac43n\pi\lambda_D^3 = 1.38 \times 10^6\times \frac{T^{3/2}}{n^{1/2}}
-        $$
-- **3. If $\omega$ is the frequency of typical plasma oscillations and $\tau$ is the mean time between collisions with neutral atoms, the ionized gas is considered plasma only if $\omega \tau > 1$
+
+$$
+N_D = \frac43n\pi\lambda_D^3 = 1.38 \times 10^6\times \frac{T^{3/2}}{n^{1/2}}
+$$
+  
+- **3. If $\omega$ is the frequency of typical plasma oscillations and $\tau$ is the mean time between collisions with neutral atoms, the ionized gas is considered plasma only if $\omega \tau > 1$**
 
 ## Solar Energetic Particle (SEP) Acceleration Dynamics and Machine Learning Telemetry Imputation
 
