@@ -2,34 +2,48 @@ import numpy as np
 
 class CMEShockGenerator:
     """
-    Models the MHD macro-properties of a Coronal Mass Ejection (CME) driven shock.
-    Uses continuous hyperbolic tangent profiles to simulate the sharp transitions
-    (Rankine-Hugoniot jumps) in plasma speed and magnetic field intensity.
+    Generates MHD macro-property profiles for the simulation grid.
+    This can be based on either an idealized analytical model (tanh) or by
+    interpolating data from an external MHD simulation.
     """
-    def __init__(self, shock_position=0.0, shock_width=0.05, compression_ratio=3.5):
-        self.x_s = shock_position         # Position of the shock front in the grid
-        self.w = shock_width              # Spatial thickness of the shock transition layer
-        self.s = compression_ratio        # Magnetic field compression ratio (B_downstream / B_upstream)
+    def __init__(self):
+        pass
 
-    def compute_plasma_speed_profile(self, x_grid, V_upstream=400.0, V_downstream=1200.0):
+    def get_analytical_profile(self, x_grid, V_upstream=400.0, V_downstream=1200.0, B_upstream=5.0,
+                               shock_position=0.0, shock_width=0.05, compression_ratio=3.5):
         """
-        Generates the solar wind velocity profile V_sw(x) across the shock boundary.
-        Units: km/s
+        Generates idealized solar wind velocity and magnetic field profiles
+        using a hyperbolic tangent function to model a shock.
         """
-        # Smooth step transition modeling the deceleration of plasma relative to the shock front
-        return V_upstream + 0.5 * (V_downstream - V_upstream) * (1.0 - np.tanh((x_grid - self.x_s) / self.w))
+        # Plasma speed
+        v_profile = V_upstream + 0.5 * (V_downstream - V_upstream) * \
+                    (1.0 - np.tanh((x_grid - shock_position) / shock_width))
 
-    def compute_magnetic_field_profile(self, x_grid, B_upstream=5.0):
+        # Magnetic field
+        B_downstream = B_upstream * compression_ratio
+        b_profile = B_upstream + 0.5 * (B_downstream - B_upstream) * \
+                    (1.0 - np.tanh((x_grid - shock_position) / shock_width))
+
+        return v_profile, b_profile
+
+    def get_profile_from_data(self, x_grid, mhd_r, mhd_vr, mhd_br):
         """
-        Generates the compressed magnetic field profile B(x) across the shock boundary.
-        Units: nT (nanotesla)
+        Interpolates velocity and magnetic field profiles from MHD data
+        onto the simulation's spatial grid `x_grid`.
         """
-        B_downstream = B_upstream * self.s
-        return B_upstream + 0.5 * (B_downstream - B_upstream) * (1.0 - np.tanh((x_grid - self.x_s) / self.w))
+        # Ensure the MHD grid covers the simulation grid
+        if x_grid.min() < mhd_r.min() or x_grid.max() > mhd_r.max():
+            raise ValueError("The simulation grid 'x_grid' is outside the bounds of the MHD data grid 'mhd_r'.")
+
+        # Linearly interpolate the MHD data onto our simulation grid
+        v_profile = np.interp(x_grid, mhd_r, mhd_vr)
+        b_profile = np.interp(x_grid, mhd_r, mhd_br)
+
+        return v_profile, b_profile
 
     def compute_adiabatic_divergence(self, x_grid, V_profile):
         """
-        Calculates the spatial derivative dV/dx used to determine adiabatic energy 
+        Calculates the spatial derivative dV/dx used to determine adiabatic energy
         losses or shock acceleration rates in advanced particle tracking.
         """
         # Centered finite difference calculation for spatial gradient
