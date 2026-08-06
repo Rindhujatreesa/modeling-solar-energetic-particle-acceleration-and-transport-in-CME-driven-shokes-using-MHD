@@ -9,8 +9,8 @@ The overarching goal of this framework is to pioneer a physics-informed computat
 * **Impact:** Delivers an independent, physically accurate baseline engine that models how Solar Energetic Particles (SEPs) scatter and accelerate under dynamic heliospheric variations.
 
 ### 2. Multi-Mission Spacecraft Telemetry Degradation Modeling
-* **Objective:** Code reproducible mathematical frameworks to emulate real-world instrument limitations, capturing both systematic directional sensor blindspots (`patch` dropouts) and deep-space telemetry packet loss (`random` dropouts).
-* **Impact:** Provides a strict, high-uncertainty validation testbed that exposes Pitch-Angle Distribution (PAD) sequences to actual mission constraint profiles encountered by spacecraft like Parker Solar Probe and Solar Orbiter.
+* **Objective:** Code reproducible mathematical frameworks to emulate real-world instrument limitations, capturing both systematic directional sensor blindspots (`patch` dropouts) and geometry-driven pitch-angle loss (`random` dropouts).
+* **Impact:** Provides a strict, high-uncertainty validation testbed that exposes Pitch-Angle Distribution (PAD) sequences to actual mission constraint profiles encountered by spacecraft like Parker Solar Probe and Solar Orbiter. The masking now follows the instrument geometry: fixed telescope look directions are combined with evolving magnetic field directions, and the blind spots are placed at pitch-angle bins where the dot product $\mu = \hat{u}_p \cdot \hat{B}$ approaches zero. This makes the missing-data structure tied to the physical observing configuration, while also supporting time-series pitch-angle intensity maps.
 
 ### 3. Physics-Inspired Deep Learning Data Imputation
 * **Objective:** Architect a deep neural autoencoder optimized through a custom Masked Mean Squared Error (M-MSE) loss function to reconstruct sparse particle continuums without introducing unphysical artifacts.

@@ -12,6 +12,9 @@ A central challenge in space climate forecasting and interplanetary mission prot
 
 This project tries to tackle this challenge by combining **explicit finite-difference numerical solvers** (modeling physical transport laws) with **deep autoencoder neural networks** to impute missing PAD parameters under high uncertainty.
 
+### Instrumentation-aware gap modeling
+The synthetic telemetry degradation now reflects the physics of the observing system rather than arbitrary pixel masking. The instrument is treated as having a fixed set of look directions, while the magnetic field direction evolves over time. For a given particle propagation direction and a magnetic field direction, the pitch-angle cosine is evaluated as $\mu = \hat{u}_p \cdot \hat{B}$. When this quantity approaches zero, the measurement geometry becomes effectively perpendicular and the corresponding pitch-angle bin is treated as a blind spot. The degrader therefore masks the pitch bins that are geometrically consistent with those zero-crossing combinations, so the missing data follow the same directional constraints as the instrument and the magnetic field geometry. For time-dependent magnetic field histories, the module can also generate a pitch-angle-versus-time intensity map using a 2D color-scaled visualization instead of a single line-series plot.
+
 ---
 
 ## Theoretical Formulation
